@@ -1,0 +1,8 @@
+{
+  "name": "CivicPulse",
+  "description": "A modern, hyperlocal civic infrastructure tracking and automated AI dispatch platform for Indian municipalities.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

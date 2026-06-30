@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "Report": {
+      "title": "Report",
+      "description": "A citizen-reported municipal complaint containing triage metadata, geolocation, and status information.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "latitude": { "type": "string" },
+        "longitude": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "imageBase64": { "type": "string" },
+        "isGenuine": { "type": "boolean" },
+        "severity": { "type": "string", "enum": ["Low", "Medium", "High", "Critical"] },
+        "issueType": { "type": "string" },
+        "recommendedAction": { "type": "string" },
+        "targetDepartment": { "type": "string" },
+        "status": { "type": "string", "enum": ["Open", "Verifying", "Resolved"] },
+        "upvotes": { "type": "number" },
+        "aiSummary": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "description", "category", "latitude", "longitude", "imageUrl", "isGenuine", "severity", "issueType", "recommendedAction", "targetDepartment", "status", "upvotes", "aiSummary", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/reports/{reportId}": {
+      "schema": "Report",
+      "description": "Collection of all verified citizen reports and municipal issues."
+    }
+  }
+}
